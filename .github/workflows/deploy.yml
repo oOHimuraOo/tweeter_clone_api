@@ -30,5 +30,6 @@ jobs:
           vercel-project-name: tweeter-clone-api
           vercel-org-id: felipes-projects-554b7f45
           vercel-team-id: team_i5AagCA8nXUhqp2pTQFMjXcg
+          vercel-project-id: dpl_4ZQuHxxmQYrdRhkEjXhqxtJKSrqK
           github-comment: true
           github-deployment: false
