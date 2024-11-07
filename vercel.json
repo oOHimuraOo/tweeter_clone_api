@@ -1,0 +1,13 @@
+{
+    "builds": [
+        {
+        "src": "Dockerfile",
+        "use": "@vercel/docker"
+        }
+    ],
+    "env": {
+        "DEBUG": "false",
+        "DB_PATH": "/app/db.sqlite3",
+        "DJANGO_SETTINGS_MODULE": "tweeter_clone.settings"
+    }
+}

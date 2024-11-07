@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+      - ./db.sqlite3:/app/db.sqlite3  # Mapeando o arquivo SQLite para o contêiner
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+    depends_on:
+      - db
+
+  # Como estamos usando SQLite, não precisamos de um serviço de banco de dados separado
+  db:
+    image: "busybox"  # Esta linha pode ser removida, já que SQLite não precisa de serviço separado
+    volumes:
+      - ./db.sqlite3:/app/db.sqlite3  # Mapeando o arquivo SQLite para o contêiner
